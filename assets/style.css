@@ -23,27 +23,29 @@ footer {
         display: none;
     }
     .desktop{
-        display: inline-flex;
+        display: flex;
     }
 }
 .grid {
     display: grid;
-    gap: 20px;
+    gap: 10px;
+    padding: 10px;
     min-height: 100vh;
-    grid-template-rows: auto 0.10fr 0.25fr auto;
-    grid-template-areas: 'header'
-        'horiz_banner'
-        'main'
-        'footer';
+    grid-template-rows: auto 0.15fr 1fr auto;
+    grid-template-areas:    'header'
+                            'horiz_banner'
+                            'main'
+                            'footer';
 }
 
 @media (min-width:800px){
         .grid {
             display: grid;
-            gap: 10px;
+            gap: 20px;
+            padding: 48px;
             min-height: 100vh;
-            grid-template-rows: auto 0.25fr 1fr auto;
-            grid-template-areas: 'header'
+            grid-template-rows: auto 1fr 1fr auto;
+            grid-template-areas:    'header'
                                     'horiz_banner'
                                     'main'
                                     'footer';
@@ -95,8 +97,8 @@ footer {
 /* grid for main part */
 main {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 2fr);
+    grid-template-columns:  1fr;
+    grid-template-rows: repeat(8, 1fr);
     gap: 20px;
 }
 
@@ -112,9 +114,16 @@ main {
 /* shadow for text in the banner */
 .card-img-overlay h5.card-title,
 .card-img-overlay p.card-text {
-    text-shadow: 1px 2px 3px #000;
+    text-shadow: 1px 2px 1px rgb(192, 23, 23);
+    font-size: x-small;
 }
 
+@media (min-width:800px){
+    .card-img-overlay h5.card-title,
+    .card-img-overlay p.card-text {
+        text-shadow: 1px 2px 3px #000;
+    }
+}
 /* grid for footer */
 footer {
         display: grid;
@@ -152,7 +161,7 @@ footer {
 /* задаю фиксированные размеры картинки и применяю функцию заполнения */
 .banner_top img {
     width: 100%;
-    max-height: 50px;
+    max-height: 100px;
     object-fit: cover;
 }
 
